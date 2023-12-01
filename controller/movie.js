@@ -19,7 +19,7 @@ exports.addMovie =async(req, res) => {
     try {
         const result = await Movies.create({Title, Poster, Plot, Type, Released })
         if(result){
-            return res.status(200).json({msg: 'Movie added to favourite successfully', success: true})
+            return res.status(200).json({msg: `Movie ${Title} added to favourite successfully`, success: true})
         }else{
             return res.status(400).json({msg: 'Failed to add movie in favourite?', success: false})
         }
